@@ -1,0 +1,98 @@
+.navbar
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+
+    padding: 1rem 0.7rem
+
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.3)
+
+    position: fixed
+    top: 0
+    left: 0
+
+    background-color: #fff
+
+    z-index: 1000
+
+    // display: none
+
+.title
+    font-size: 1.5rem
+    // font-weight: 700
+    animation-name: fromLeft
+    animation-duration: 900ms
+    animation-timing-function: ease-in-out
+    // animation-iteration-count: infinite
+    animation-direction: alternate
+
+@keyframes fromLeft
+    0%
+        opacity: 0
+        transform: translateX(-50%)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+.download-resume-cont
+    display: block
+    text-decoration: none
+    width: 30%
+
+    max-width: 150px
+
+.download-resume
+    background-color: $secondryBgClor
+    color: #fff
+    padding: 0.65rem
+    outline: none
+    border: none
+
+    width: 100%
+
+    font-size: 0.8rem
+    letter-spacing: 0.5px
+
+    border-radius: 0.35rem
+
+    transition: 350ms
+
+    animation-name: shinkgrow
+    animation-duration: 1000ms
+    animation-timing-function: ease-in-out
+    animation-iteration-count: infinite
+    animation-direction: alternate
+
+    &:hover
+        background-color: darken($secondryBgClor, 6%)
+        box-shadow: 0 0 3px 0 rgba(51, 51, 51, 0.6)
+        animation: none
+
+    &:active
+        background-color: $secondryBgClor
+        box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.6)
+
+@keyframes shinkgrow
+    0%
+        transform: scale(0.95)
+        box-shadow: 0 0 5px rgba(51, 51, 51, 0.6)
+    100%
+        transform: scale(1)
+        box-shadow: 0 0 7px rgba(51, 51, 51, 0.6)
+
+@media screen and ( min-width: 560px )
+    .navbar
+        padding: 1rem 1.3rem
+
+    .title
+        font-size: 1.8rem
+
+@media screen and ( min-width: 900px )
+    .navbar
+        padding: 1rem 3.5rem
+    .title
+        font-size: 2.2rem
+
+    .download-resume
+        font-size: 1.2rem
